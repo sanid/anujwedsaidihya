@@ -216,7 +216,7 @@
                 <div class="relative max-w-2xl mx-auto mt-16 sm:mt-24">
                     <!-- Couple Image -->
                     <div class="relative z-20 flex justify-center -mb-16 sm:-mb-24 pointer-events-none">
-                        <img src="https://i.ibb.co/3mBK398P/paar-invite.png" alt="Anuj & Aidihya"
+                        <img src="images/paar-invite.png" alt="Anuj & Aidihya"
                             class="w-[280px] sm:w-[360px] md:w-[450px] h-auto object-contain"
                             style="-webkit-mask-image: radial-gradient(ellipse 95% 100% at 50% 15%, black 40%, transparent 85%); mask-image: radial-gradient(ellipse 95% 100% at 50% 15%, black 40%, transparent 85%);" />
                     </div>
@@ -677,14 +677,37 @@
                 fullName: "पूरा नाम", namePlaceholder: "उदा. राहुल और अंजलि",
                 totalGuests: "अपने सहित अतिथियों की कुल संख्या", selectNum: "संख्या चुनें",
                 person: "व्यक्ति", people: "लोग", sendRsvp: "RSVP भेजें", sending: "भेजा जा रहा है...",
+                langSwitch: "Switch to മലയാളം"
+            },
+            ml: {
+                subtitle: "ഞങ്ങളുടെ കുടുംബങ്ങൾക്കൊപ്പം",
+                name1: "അനുജ്", name2: "ഐദിഹ്യ",
+                invite1: "ഞങ്ങളുടെ വിവാഹത്തിൽ പങ്കെടുക്കാൻ", invite2: "നിങ്ങളെ സ്നേഹപൂർവ്വം ക്ഷണിക്കുന്നു", invite3: "ഞങ്ങളുടെ പുതിയ ജീവിതത്തിന് അനുഗ്രഹിക്കൂ.",
+                celebrations: "ആഘോഷങ്ങൾ", wedding: "വിവാഹം", date1: "30 ഓഗസ്റ്റ് 2026", date2: "30 ഓഗസ്റ്റ് 2026",
+                muhurtham: "മുഹൂർത്തം: രാവിലെ 11:30 മുതൽ 12:10 വരെ", crAuditorium: "സി ആർ ഓഡിറ്റോറിയം",
+                wedAdd1: "കണ്ണൂർ മട്ടന്നൂർ റോഡ്, ഈച്ചൂർ,", wedAdd2: "ചേലോറ, കണ്ണൂർ,", wedAdd3: "കേരളം 670591",
+                reception: "സൽക്കാരം", receptionTime: "വൈകുന്നേരം 6:00 മുതൽ", kanakaHouse: "കനക ബീച്ച് ഹൗസ്",
+                recAdd1: "പയ്യാമ്പലം ബീച്ച് റോഡ്,", recAdd2: "പള്ളിയാമൂല, കണ്ണൂർ,", recAdd3: "കേരളം 670008",
+                viewMap1: "മാപ്പ് കാണുക", viewMap2: "മാപ്പ് കാണുക", memories: "ഓർമ്മകൾ",
+                joinJoy: "ഞങ്ങളുടെ സന്തോഷത്തിൽ പങ്കുചേരുക", joinDesc: "ഞങ്ങൾക്കൊപ്പം ആഘോഷിക്കാൻ നിങ്ങളുണ്ടെങ്കിൽ ഞങ്ങൾക്ക് വലിയ സന്തോഷമായിരിക്കും.",
+                rsvpNow: "RSVP ചെയ്യുക", floatingRsvp: "RSVP ചെയ്യുക", footer: "അനുജിനും ഐദിഹ്യക്കും വേണ്ടി ❤️ യോടെ നിർമ്മിച്ചത്",
+                musicPlaying: "സംഗീതം പ്ലേ ചെയ്യുന്നു", playMusic: "സംഗീതം പ്ലേ ചെയ്യുക",
+                rsvpTitle: "RSVP", rsvpSubtitle: "നിങ്ങൾക്ക് വരാൻ കഴിയുമോ എന്ന് ദയവായി അറിയിക്കുക!",
+                thankYou: "നന്ദി!", rsvpSuccess: "നിങ്ങളുടെ RSVP ലഭിച്ചു.",
+                fullName: "പൂർണ്ണമായ പേര്", namePlaceholder: "ഉദാ. രാഹുലും അഞ്ജലിയും",
+                totalGuests: "നിങ്ങൾ ഉൾപ്പെടെ ആകെ അതിഥികളുടെ എണ്ണം", selectNum: "എണ്ണം തിരഞ്ഞെടുക്കുക",
+                person: "ആൾ", people: "പേർ", sendRsvp: "RSVP അയയ്ക്കുക", sending: "അയയ്ക്കുന്നു...",
                 langSwitch: "Switch to English"
             }
         };
 
-        let currentLang = 'en';
+        const languages = ['en', 'hi', 'ml'];
+        let currentLangIndex = 0;
+        let currentLang = languages[currentLangIndex];
 
         function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'hi' : 'en';
+            currentLangIndex = (currentLangIndex + 1) % languages.length;
+            currentLang = languages[currentLangIndex];
             const t = translations[currentLang];
 
             // Update text nodes
