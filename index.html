@@ -684,12 +684,12 @@
                     setAudioState(false);
                 });
                 
-            ['click', 'touchstart'].forEach(evt => 
+            ['click', 'touchstart', 'scroll'].forEach(evt => 
                 document.removeEventListener(evt, startAudio)
             );
         };
 
-        ['click', 'touchstart'].forEach(evt => 
+        ['click', 'touchstart', 'scroll'].forEach(evt => 
             document.addEventListener(evt, startAudio, { once: true })
         );
 
